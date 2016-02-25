@@ -1,0 +1,70 @@
+<html>
+	<head>
+		<title>Secutiry Testing</title>
+		
+		<link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css" />
+	</head>
+	<body>			
+		<nav class="navbar navbar-inverse">
+		  <div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+			  <a class="navbar-brand" href="#">Security Testing</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			  <ul class="nav navbar-nav">
+				<li class="active"><a href="./fun.html">Fun</a></li>
+				<li><a href="#">Link</a></li>
+			  </ul>
+			</div><!-- /.navbar-collapse -->
+		  </div><!-- /.container-fluid -->
+		</nav>
+		
+		<div class="container">
+			<div class="panel panel-default">
+			  <div class="panel-heading">
+				<h3 class="panel-title">Security Testing</h3>
+			  </div>
+			  <div class="panel-body">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-5">
+							<div class="panel panel-default">
+								<div class="panel-body" style="min-height: 200;">
+									<table class="table table-striped">
+										<tr>
+											<td>Username: </td>
+											<td><input type="text" id="usernameText" /></td>
+										</tr>
+										<tr>
+											<td>Password: </td>
+											<td><input type="password" id="passwordText" /></td>
+										</tr>
+										<tr>
+											<td><input type="button" value="Log In" id="signInButton" /></td>
+											<td></td>
+										</tr>
+									</table>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-5 col-md-offset-1">
+							<div class="panel panel-default">
+								<div class="panel-body" style="min-height: 200;">
+									<div id="dbContent"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			  </div>
+			</div>
+		</div>
+		
+		<!-- Scripts -->
+		<script src="./lib/jquery-2.1.4.min.js"></script>
+		<script src="./js/index.js"></script>
+	</body>
+</html>
