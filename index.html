@@ -18,6 +18,10 @@
 				<li class="active"><a href="./fun.html">Fun</a></li>
 				<li><a href="#">Link</a></li>
 			  </ul>
+			  
+			  <ul class="nav navbar-nav navbar-right">
+				<li><a href="/securitytesting/src/logout.php">Logout</a></li>
+			  </ul>
 			</div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->
 		</nav>
@@ -33,20 +37,22 @@
 						<div class="col-md-5">
 							<div class="panel panel-default">
 								<div class="panel-body" style="min-height: 200;">
-									<table class="table table-striped">
-										<tr>
-											<td>Username: </td>
-											<td><input type="text" id="usernameText" /></td>
-										</tr>
-										<tr>
-											<td>Password: </td>
-											<td><input type="password" id="passwordText" /></td>
-										</tr>
-										<tr>
-											<td><input type="button" value="Log In" id="signInButton" /></td>
-											<td></td>
-										</tr>
-									</table>
+									<form action="src/index.php" method="post">
+										<table class="table table-striped">
+											<tr>
+												<td>Username: </td>
+												<td><input type="text" name="user" id="usernameText" /></td>
+											</tr>
+											<tr>
+												<td>Password: </td>
+												<td><input type="password" name="pass" id="passwordText" /></td>
+											</tr>
+											<tr>
+												<td><input type="submit" value="Log In" /></td>
+												<td></td>
+											</tr>
+										</table>
+									</form>
 								</div>
 							</div>
 						</div>

@@ -1,24 +1,41 @@
-<?php
 
-require_once("db_info.php");
+<?php  
+//Start the Session
+header('Location: http://localhost/securitytesting/fun.html');
+session_start();
+require_once("Utils/db_info.php");
+require_once("Utils/database.php");
 
-$user = $_POST["user"];
-$pass = $_POST["pass"];
+if (isset($_POST['user']) and isset($_POST['pass'])){
+	$username = $_POST['user'];
+	$password = $_POST['pass'];
 
-$link = new mysqli($db_hostname,$db_username,$db_password,$db_database);
+	$query = $link->prepare("SELECT Username, Pass FROM users WHERE Username='{$username}' AND Pass='{$password}'");
+	//$query->bind_param('ss',$user,$pass);
+	
+	$query->execute();
+	 
+	$result = $query->get_result();
+	
+	$count = mysqli_num_rows($result);
+	
+	$query->close();
+	$link->close();
 
-$query = $link->prepare("SELECT Username, Pass FROM users WHERE Username='{$user}' AND Pass='{$pass}'");
+	if ($count == 1){
+		$_SESSION['username'] = $username;
+		//echo "http://localhost/securitytesting/fun.html";
+		header('Location: http://localhost/securitytesting/fun.html');
+	}else{
+		echo "Invalid Login Credentials.";
+	}
+}
 
-//$query->bind_param('ss',$user,$pass);
 
-$query->execute();
-
+/*
 $result = $query->get_result();
 while ($row = $result->fetch_assoc()) {
 	echo " Name: " . $row{'Username'} . ", Password: " . $row{'Pass'} . "<br \>";
 }
-
-$query->close();
-$link->close();
-
+*/
 ?>

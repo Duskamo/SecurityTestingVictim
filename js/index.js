@@ -9,7 +9,7 @@ $(document).ready(function() {
 			data : { "user" : $username, "pass" : $password},
 			success: function(data)
 			{
-				$("#dbContent").html(data);
+				//window.location.replace(data);
 			}
 		});
 	});
