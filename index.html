@@ -5,6 +5,8 @@
 		<link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css" />
 	</head>
 	<body>			
+		<?php require('src/sessionHandler.php'); ?>
+	
 		<nav class="navbar navbar-inverse">
 		  <div class="container-fluid">
 			<!-- Brand and toggle get grouped for better mobile display -->
@@ -15,13 +17,13 @@
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			  <ul class="nav navbar-nav">
-				<li class="active"><a href="./fun.html">Fun</a></li>
-				<li><a href="#">Link</a></li>
+				<li><a href="#">Fake Data</a></li>
+				<li><a href="#">Makes The</a></li>
+				<li><a href="#">Navbar Look</a></li>
+				<li><a href="#">Pretty</a></li>
 			  </ul>
 			  
-			  <ul class="nav navbar-nav navbar-right">
-				<li><a href="/securitytesting/src/logout.php">Logout</a></li>
-			  </ul>
+			  <?php require('src/navbar.php'); ?>
 			</div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->
 		</nav>

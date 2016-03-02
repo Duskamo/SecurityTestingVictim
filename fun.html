@@ -5,6 +5,8 @@
 		<link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css" />
 	</head>
 	<body>			
+		<?php require('src/sessionHandler.php'); ?>
+	
 		<nav class="navbar navbar-inverse">
 		  <div class="container-fluid">
 			<!-- Brand and toggle get grouped for better mobile display -->
@@ -19,9 +21,7 @@
 				<li><a href="#">Link</a></li>
 			  </ul>
 			  
-			  <ul class="nav navbar-nav navbar-right">
-				<li><a href="/securitytesting/src/logout.php">Logout</a></li>
-			  </ul>
+			  <?php require('src/navbar.php'); ?>
 			</div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->
 		</nav>
@@ -52,13 +52,6 @@
 							<br />
 							<input type="file"></input>
 							<hr />
-							<div class="input-group">
-								<div class="input-group-btn">
-									<button class="btn btn-default" type="button" id="getEmailButton">Get</button>
-								</div>
-								<input type="text" class="form-control" placeholder="Email" id="getEmailText" aria-describedby="basic-addon1">
-							</div>
-							<br />
 							<div class="form-group">
 								<strong class="text-primary">Comment:</strong>
 								<textarea class="form-control" rows="5" id="commentText"></textarea>
@@ -73,6 +66,9 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">Comments</h3>
+						</div>
 						<div class="panel-body" style="min-height: 200;">
 							<div id="emailOutput"></div>
 						</div>
