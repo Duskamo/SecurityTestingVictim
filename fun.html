@@ -5,7 +5,10 @@
 		<link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css" />
 	</head>
 	<body>			
-		<?php require('src/sessionHandler.php'); ?>
+		<?php 
+		session_start();
+		require('src/sessionHandler.php'); 
+		?>
 	
 		<nav class="navbar navbar-inverse">
 		  <div class="container-fluid">
@@ -17,7 +20,7 @@
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			  <ul class="nav navbar-nav">
-				<li class="active"><a href="#">Fun</a></li>
+				<li><a href="#">Fun</a></li>
 				<li><a href="#">Link</a></li>
 			  </ul>
 			  

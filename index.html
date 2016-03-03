@@ -1,11 +1,13 @@
 <html>
 	<head>
-		<title>Secutiry Testing</title>
+		<title>Security Testing</title>
 		
 		<link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css" />
 	</head>
 	<body>			
-		<?php require('src/sessionHandler.php'); ?>
+		<?php 
+		session_start();
+		?>
 	
 		<nav class="navbar navbar-inverse">
 		  <div class="container-fluid">

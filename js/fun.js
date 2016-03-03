@@ -50,5 +50,23 @@ $(document).ready(function() {
 			type: "POST",
 			data : { "comment" : $comment},
 		});
+		
+		$.ajax({
+			url : "./src/getComments.php",
+			type: "GET",
+			success: function(data)
+			{
+				var comments = data.split(',');
+				comments.pop();
+				
+				var content = "<ul class='list-group'>";
+				for (var i = 0; i < comments.length; i++) {
+					content += "<li class='list-group-item'>" + comments[i] + "</il>";
+				}
+				content += "</ul>";
+
+				$("#emailOutput").html(content);
+			}
+		});
 	});
 });

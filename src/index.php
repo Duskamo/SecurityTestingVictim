@@ -11,7 +11,7 @@ if (isset($_POST['user']) and isset($_POST['pass'])){
 	$password = $_POST['pass'];
 
 	$query = $link->prepare("SELECT Username, Pass FROM users WHERE Username='{$username}' AND Pass='{$password}'");
-	//$query->bind_param('ss',$user,$pass);
+	//$query->bind_param('ss',$username,$password);
 	
 	$query->execute();
 	 
@@ -27,15 +27,7 @@ if (isset($_POST['user']) and isset($_POST['pass'])){
 		//echo "http://localhost/securitytesting/fun.html";
 		header('Location: http://localhost/securitytesting/fun.html');
 	}else{
-		echo "Invalid Login Credentials.";
+		header('Location: http://localhost/securitytesting/index.html');
 	}
 }
-
-
-/*
-$result = $query->get_result();
-while ($row = $result->fetch_assoc()) {
-	echo " Name: " . $row{'Username'} . ", Password: " . $row{'Pass'} . "<br \>";
-}
-*/
 ?>
