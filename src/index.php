@@ -9,8 +9,8 @@ if (isset($_POST['user']) and isset($_POST['pass'])){
 	$username = $_POST['user'];
 	$password = $_POST['pass'];
 
-	$query = $link->prepare("SELECT * FROM users WHERE Username='{$username}' AND Pass='{$password}'");
-	//$query->bind_param('ss',$username,$password);
+	$query = $link->prepare("SELECT * FROM users WHERE Username=? AND Pass=?");
+	$query->bind_param('ss',$username,$password);
 	
 	$query->execute();
 	 

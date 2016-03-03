@@ -5,9 +5,8 @@ require_once("Utils/database.php");
 
 $email = $_POST["email"];
 
-$query = $link->prepare("UPDATE users SET Email='{$email}' WHERE Username='{$_SESSION['username']}'");
-
-//$query->bind_param('ss',$user,$pass);
+$query = $link->prepare("UPDATE users SET Email=? WHERE Username=?");
+$query->bind_param('ss',$email,$_SESSION['username']);
 
 $query->execute();
 

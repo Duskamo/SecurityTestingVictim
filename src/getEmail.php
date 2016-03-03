@@ -3,9 +3,8 @@ session_start();
 require_once("Utils/db_info.php");
 require_once("Utils/database.php");
 
-$query = $link->prepare("SELECT Email FROM users WHERE Username='{$_SESSION['username']}'"); 
-
-//$query->bind_param('ss',$user,$pass);
+$query = $link->prepare("SELECT Email FROM users WHERE Username=?"); 
+$query->bind_param('s',$_SESSION['username']);
 
 $query->execute();
 
